@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Катя Романова. Определение количества максимальных элементов в массиве</title>
+</head>
+<body>
+<script language="JavaScript">
+  function calc() {
+    var mas = form1.input.value.split(',').map(
+      function (elem) {
+        return parseFloat(elem);
+      }
+    );
+
+    var max = mas[0];
+    for (var i = 1; i < mas.length; i++) {
+      if (mas[i] > max) max = mas[i];
+    }
+
+    var res = 0;
+    for (var i = 0; i < mas.length; i++) {
+      if (mas[i] == max) res++;
+    }
+
+    form1.max.value = max;
+    form1.res.value = res;
+  }
+  function reset() {
+    form1.input.value = '';
+    form1.max.value = '';
+    form1.res.value = '';
+  }
+</script>
+<form name="form1">
+    <p>Введите значения массива через запятую: <input type="text" name="input" value="" ></p>
+    <input type="button" value="Выполнить" onClick="calc()">
+    <p>Максимальный элемент: <input type="text" name="max" size="20" readonly></p>
+    <p>Количество максимальных элементов: <input type="text" name="res" size="20" readonly></p>
+    <input type="reset" value="Отмена" onClick="reset()">
+</form>
+</body>
+</html>

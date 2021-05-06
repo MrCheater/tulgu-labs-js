@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Катя Романова. Сортировка массива по возрастанию</title>
+    <script language="JavaScript">
+      var n = prompt('Введите количество элементов массива: ');
+      var mas = new Array (n);
+      for (var i = 0; i < n; i++) {
+        mas[i] = parseFloat(prompt('mas['+i+']='));
+      }
+      document.writeln('Исходный массив=' + mas);
+
+      for (let i = 0; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+          if (mas[i] < mas[j]) {
+            let temp = mas[i];
+            mas[i] = mas[j];
+            mas[j] = temp;
+          }
+        }
+      }
+
+      document.writeln('Отсортированный по возрастанию массив=' + mas);
+    </script>
+</head>
+<body>
+<script language="JavaScript">
+  max()
+</script>
+</body>
+</html>

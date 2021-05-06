@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Катя Романова. Сортировка массива по возрастанию</title>
+</head>
+<body>
+<script language="JavaScript">
+  function calc() {
+    var mas = form1.input.value.split(',').map(
+      function (elem) {
+        return parseFloat(elem);
+      }
+    );
+
+    for (let i = 0; i < mas.length; i++) {
+      for (let j = 0; j < i; j++) {
+        if (mas[i] < mas[j]) {
+          let temp = mas[i];
+          mas[i] = mas[j];
+          mas[j] = temp;
+        }
+      }
+    }
+
+    form1.res.value = mas;
+  }
+  function reset() {
+    form1.input.value = '';
+    form1.res.value = '';
+  }
+</script>
+<form name="form1">
+    <p>Введите значения массива через запятую: <input type="text" name="input" value="" ></p>
+    <input type="button" value="Выполнить" onClick="calc()">
+    <p>Отсортированный по возрастанию массив: <input type="text" name="res" size="20" readonly></p>
+    <input type="reset" value="Отмена" onClick="reset()">
+</form>
+</body>
+</html>

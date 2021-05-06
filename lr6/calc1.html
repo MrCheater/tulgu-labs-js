@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Катя Романова. Использование переключателей</title>
+    <script language="javascript">
+      function calc () {
+        var sign = form1.sign.value;
+        var x = parseFloat(form1.x.value);
+        var y = parseFloat(form1.y.value);
+        switch (sign) {
+            case '+': form1.res.value = x + y; break;
+            case '-': form1.res.value = x - y; break;
+            case '*': form1.res.value = x * y; break;
+            case '/': form1.res.value = x / y; break;
+            default: form1.res.value = '';
+        }
+      }
+      function reset() {
+        form1.res.x = '';
+        form1.res.y = '';
+        form1.res.value = '';
+        form1.sign.value = '';
+      }
+    </script>
+</head>
+<body>
+<form name="form1">
+    Введите x:
+    <input type="text" name="x" size=10>
+    <hr>
+    Введите y:
+    <input type="text" name="y" size=10>
+    <hr>
+    Выберите операцию:
+    <hr>
+    <input type="radio" name="sign" value="+" onClick="calc()"> Сложение <br>
+    <input type="radio" name="sign" value="-" onClick="calc()"> Вычитание <br>
+    <input type="radio" name="sign" value="*" onClick="calc()"> Умножение <br>
+    <input type="radio" name="sign" value="/" onClick="calc()"> Деление <br>
+    Результат: <input type="text" name="res" readonly size=10>
+    <input type="reset" value="Отмена" onClick="reset()">
+</form>
+</body>
+</html>

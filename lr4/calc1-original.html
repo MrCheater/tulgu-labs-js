@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Катя Романова. Простейший калькулятор</title>
+    <script language="JavaScript">
+      alert("Чтобы завершить программу, закройте окно выбора знака операции");
+      while (true) {
+        var sign = prompt("Знак (+,-,*,/): ");
+        if (sign == null) break;
+        while (sign != '+' && sign != '-' && sign != '*' && sign != '/') {
+          alert("Неверный знак операции!")
+          sign = prompt("Знак (+,-,*,/): ");
+          if (sign == null) break;
+        }
+        var x = parseFloat(prompt('x='));
+        var y = parseFloat(prompt('y='));
+        switch (sign) {
+          case '+': {
+            alert('x='+x+', y='+y+', x+y='+(x+y));
+            break;
+          }
+          case '-': {
+            alert('x='+x+', y='+y+', x-y='+(x-y));
+            break;
+          }
+          case '*': {
+            alert('x='+x+', y='+y+', x*y='+(x*y));
+            break;
+          }
+          case '/': {
+            if (y == 0) {
+              alert("Деление на ноль!")
+            } else {
+              alert('x='+x+', y='+y+', x/y='+(x/y));
+            }
+            break;
+          }
+        }
+        if(!confirm('Продолжить?')) {
+          break;
+        }
+      }
+    </script>
+</head>
+<body>
+</body>
+</html>

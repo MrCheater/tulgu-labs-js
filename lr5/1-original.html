@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Катя Романова. Определение количества максимальных элементов в массиве</title>
+    <script language="JavaScript">
+        var n = prompt('Введите количество элементов массива: ');
+        var mas = new Array (n);
+        for (var i = 0; i < n; i++) {
+          mas[i] = parseFloat(prompt('mas['+i+']='));
+        }
+        var m = mas[0];
+        for (var i = 1; i < n; i++) {
+          if (mas[i] > m) m = mas[i];
+        }
+        var k = 0;
+        for (var i = 0; i < n; i++) {
+          if (mas[i] == m) k++;
+        }
+        document.writeln('Массив=' + mas);
+        document.writeln('Максимальный элемент=' + m);
+        document.writeln('Количество максимальных элементов=' + k);
+    </script>
+</head>
+<body>
+<script language="JavaScript">
+  max()
+</script>
+</body>
+</html>

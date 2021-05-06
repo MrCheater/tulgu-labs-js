@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Катя Романова. Использование флажков</title>
+</head>
+<body>
+<script language="JavaScript">
+  function calc() {
+    var res = parseFloat(form1.input.value);
+    var formula = res;
+
+    if(form1.c1.checked) {
+        formula = '(' + formula + '+1)';
+        res = res + 1;
+    }
+    if(form1.c2.checked) {
+      formula = '(' + formula + '*2)';
+      res = res * 2;
+    }
+    if(form1.c3.checked) {
+      formula = '(' + formula + '^2)';
+      res = res * res;
+    }
+    if(form1.c4.checked) {
+      formula = '(' + formula + '%5)';
+      res = res % 5;
+    }
+    form1.res.value = res;
+    form1.formula.value = 'res = ' + formula;
+  }
+  function reset() {
+    form1.input.value = '0';
+    form1.c1.value = '';
+    form1.c2.value = '';
+    form1.c3.value = '';
+    form1.c4.value = '';
+    form1.res.value = '';
+    form1.formula.value = '';
+  }
+</script>
+<form name="form1">
+    <p>Введите значение: <input type="text" name="input" value="0" ></p>
+    <p><input type="checkbox" name="c1" value="Флажок 1" onClick="calc()">Прибавить 1</p>
+    <p><input type="checkbox" name="c2" value="Флажок 2" onClick="calc()">Умножить на 2</p>
+    <p><input type="checkbox" name="c3" value="Флажок 3" onClick="calc()">Возвести в квадрат</p>
+    <p><input type="checkbox" name="c4" value="Флажок 4" onClick="calc()">Взять остаток от деления на 5</p>
+    <input type="button" value="Выполнить" onClick="calc()">
+    <p>Выражение: <input type="text" name="formula" size="20" readonly></p>
+    <p>Результат: <input type="text" name="res" size="20" readonly></p>
+    <input type="reset" value="Отмена" onClick="reset()">
+</form>
+</body>
+</html>
