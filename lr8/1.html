@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title> </title>
+    <script language="JavaScript">
+      function calc() {
+        var x = parseFloat(form1.x.value);
+        var y = parseFloat(form1.y.value);
+        var sign = form1.sign.value;
+
+        if (sign != '+' && sign != '-' && sign != '*' && sign != '/') {
+          form1.res.value = "Неверный знак операции!";
+          return
+        }
+
+        switch (sign) {
+          case '+': {
+            form1.res.value = x+y;
+            break;
+          }
+          case '-': {
+            form1.res.value = x-y;
+            break;
+          }
+          case '*': {
+            form1.res.value = x*y;
+            break;
+          }
+          case '/': {
+            if (y == 0) {
+              form1.res.value = "Деление на ноль!"
+            } else {
+              form1.res.value = x/y;
+            }
+            break;
+          }
+        }
+      }
+      function reset() {
+        form1.x.value = '';
+        form1.y.value = '';
+        form1.sign.value = '';
+        form1.res.value = '';
+      }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <p>Введите X: <input type="text" name="x" value="" ></p>
+        <p>Введите Y: <input type="text" name="y" value="" ></p>
+        <p>Выберите арифметическую операцию
+        <select name="sign" size=1>
+            <option value="+"> Сложение
+            <option value="-"> Вычитание
+            <option value="*"> Умножение
+            <option value="/"> Деление
+        </select></p>
+        <input type="button" value="Выполнить" onClick="calc()">
+        <p>Результат: <input type="text" name="res" size="20" readonly></p>
+        <input type="reset" value="Отмена" onClick="reset()">
+    </form>
+</body>
+</html>

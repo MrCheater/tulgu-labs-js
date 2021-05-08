@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Умножение</title>
+</head>
+<body>
+<script language="JavaScript">
+  function calc() {
+    var x = parseFloat(form1.x.value);
+    var y = parseFloat(form1.y.value);
+
+    form1.res.value = x*y;
+  }
+  function reset() {
+    form1.x.value = '';
+    form1.y.value = '';
+    form1.res.value = '';
+  }
+</script>
+<form name="form1">
+    <p>Введите X: <input type="text" name="x" value="" ></p>
+    <p>Введите Y: <input type="text" name="y" value="" ></p>
+    <p>Арифметическая операция: Умножение </p>
+    <input type="button" value="Выполнить" onClick="calc()">
+    <p>Результат: <input type="text" name="res" size="20" readonly></p>
+    <input type="reset" value="Отмена" onClick="reset()">
+</form>
+</body>
+</html>
